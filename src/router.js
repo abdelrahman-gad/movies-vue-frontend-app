@@ -8,7 +8,7 @@ const HomeComponent = () => import('./pages/HomeComponent.vue');
 const MoviesComponent = () => import('./pages/MoviesComponent.vue');
 const CreateMovieComponent = () => import('./pages/CreateMovieComponent.vue');
 const EditMovieComponent = () => import('./pages/EditMovieComponent.vue');
-
+const NotFoundComponent = () => import('./pages/NotFoundComponent.vue');
 const routes = [
     { path: '', redirect: '/movies', component: HomeComponent },
     { path: '/login', component: LoginComponent, meta: { auth: false } },
@@ -26,7 +26,11 @@ const routes = [
     {
         path: '/movies/edit/:id',
         component: EditMovieComponent,
-        props:true
+        props: true
+    },
+    {
+        path: "/:NotFound(.*)*",
+        component: NotFoundComponent,
     }
 ];
 
